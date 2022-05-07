@@ -32,9 +32,9 @@
         text-align: center;
       }
       >:last-child{
-       margin-right: 0;
+        margin-right: 0;
         border-right: none;
-    }
+      }
     }
     .filter-item{
       width: 20%;
@@ -91,7 +91,7 @@
 
 
     .loading,.noResult{
-     padding: 60px;
+      padding: 60px;
       text-align: center;
       display: flex;
       align-items: center;
@@ -119,9 +119,9 @@
 
         }
         >:last-child{
-        margin-right: 0;
-        border-right: none;
-      }
+          margin-right: 0;
+          border-right: none;
+        }
 
       }
       >:nth-child(2n){

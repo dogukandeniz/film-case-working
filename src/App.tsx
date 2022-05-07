@@ -11,11 +11,15 @@ function App() {
   const [title, setTitle] = useState("Pokemon");
   const [year, setYear] = useState("");
   const [type, setType] = useState("");
-  const [page, setSelectedPageNumber] = useState(1);
+  const [page, setSelectedPageNumber] = useState("");
 
   useEffect(()=>{
     dispatch(initSearchFilterRequestAction())
   },[])
+
+  useEffect(()=>{
+    sendFilterAction();
+  },[page])
 
 
   const sendFilterAction = () => {
@@ -32,21 +36,19 @@ function App() {
     if(title===""){
       alert("title field is required");
     }
-    setSelectedPageNumber(1)
-    sendFilterAction();
+    setSelectedPageNumber("1")
   }
 
   const handeClearFilter = () => {
     setYear("")
     setTitle("Pokemon")
     setType("")
-    setSelectedPageNumber(1)
+    setSelectedPageNumber("1")
     dispatch(initSearchFilterRequestAction())
   }
 
   const handlePageChange = (e:any) => {
-    setSelectedPageNumber(Number(e.target.value))
-    sendFilterAction();
+    setSelectedPageNumber(e.target.value)
   }
 
   const resultContent = () => {
@@ -82,8 +84,8 @@ function App() {
   const PaginationField = () => {
 
     let items = [];
-    for (let i = 1; i < searchReducer.totalPageNumber+1; i++) {
-       items.push(<option key={i}  value={i}>{i}</option>)
+    for (let i = 0; i < searchReducer.totalPageNumber; i++) {
+        items.push(<option key={i}  value={i+1}>{i+1}</option>)
     }
     return <div className="page-number">
       <select onChange={(e) => handlePageChange(e)} value={page}>

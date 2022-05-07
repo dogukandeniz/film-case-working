@@ -1,0 +1,19 @@
+@import "./global";
+/* Primary font-face */
+
+@font-face {
+  @include prm-font-face-mixin-1;
+  src: url('../fonts/openSans/OpenSans-Bold.woff2');
+  font-weight: 700;
+}
+
+@font-face {
+  @include prm-font-face-mixin-1;
+  src: url('../fonts/openSans/OpenSans-SemiBold.woff2');
+  font-weight: 600;
+}
+
+@font-face {
+  @include prm-font-face-mixin-1;
+  src: url('../fonts/openSans/OpenSans-Regular.woff2');
+}

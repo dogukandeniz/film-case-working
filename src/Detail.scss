@@ -1,0 +1,21 @@
+.detail-content{
+display: flex;
+  .c-column-01{
+    width: 30%;
+    img{
+      width: 100%;
+    }
+  }
+  .c-column-02{
+    flex: 1;
+    padding: 120px;
+    .c-item-01{
+      margin-bottom: 16px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 15px;
+      color: #333333;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@mixin prm-font-face-mixin-1 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+.c-wrapper{
+  max-width: 1320px;
+  margin:0 auto;
+  padding: 120px 0;
+}

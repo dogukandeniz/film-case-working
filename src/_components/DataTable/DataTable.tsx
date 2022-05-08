@@ -5,6 +5,7 @@ import {initSearchFilterRequestAction,searchFilterRequestAction} from '../../_ac
 import { Link } from "react-router-dom";
 function DataTable(props:any) {
 
+    debugger;
     const dispatch = useDispatch();
 
     const [title, setTitle] = useState("Pokemon");
@@ -17,7 +18,6 @@ function DataTable(props:any) {
     },[])
 
     useEffect(()=>{
-        debugger;
         sendFilterAction();
     },[page])
 
@@ -45,9 +45,7 @@ function DataTable(props:any) {
         dispatch(initSearchFilterRequestAction())
     }
 
-    const handlePageChange = (e:any) => {
-        setSelectedPageNumber(e.target.value)
-    }
+
 
     const resultContent = () => {
         if(props.items.loading){
@@ -85,7 +83,7 @@ function DataTable(props:any) {
             items.push(<option key={i}  value={i+1}>{i+1}</option>)
         }
         return <div className="page-number">
-            <select onChange={(e) => handlePageChange(e)} value={page}>
+            <select onChange={(e) => setSelectedPageNumber(e.target.value)} value={page}>
                 {
                     items
                 }

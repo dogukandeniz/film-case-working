@@ -5,7 +5,6 @@ import {initSearchFilterRequestAction,searchFilterRequestAction} from '../../_ac
 import { Link } from "react-router-dom";
 function DataTable(props:any) {
 
-    debugger;
     const dispatch = useDispatch();
 
     const [title, setTitle] = useState("Pokemon");
